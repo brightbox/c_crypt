@@ -2,7 +2,7 @@ require "rake/extensiontask"
 
 spec = Gem::Specification.new do |s|
   s.name = "c_crypt"
-  s.version = "0.1"
+  s.version = "0.2"
   s.author = "Caius Durling"
   s.email = "caius@brightbox.co.uk"
   s.homepage = "http://github.com/brightbox/c_crypt"
