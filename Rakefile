@@ -10,6 +10,7 @@ spec = Gem::Specification.new do |s|
   s.summary = "Ruby wrapper for the C crypt() function."
   s.files = FileList["ext/**/*", "lib/**/*.rb", "[A-Z]*"].to_a
   s.extensions = FileList["ext/**/extconf.rb"]
+  s.add_development_dependency "rake-compiler"
   s.has_rdoc = false
 end
 
