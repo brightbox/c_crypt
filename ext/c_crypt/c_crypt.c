@@ -1,5 +1,9 @@
 #include <ruby.h>
+#ifdef __APPLE__
+#include <unistd.h>
+#else
 #include <crypt.h>
+#endif
 
 // Define our module constant
 VALUE CCrypt = Qnil;
