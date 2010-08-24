@@ -14,7 +14,7 @@ void Init_c_crypt();
 // Prototype CCrypt.crypt3
 VALUE method_crypt3();
 
-// Define our module & method
+// Define CCrypt and the fact it has a class method called crypt3
 void Init_c_crypt() {
   CCrypt = rb_define_module("CCrypt");
   int arg_count = 2;
@@ -23,16 +23,13 @@ void Init_c_crypt() {
 
 // Implement CCrypt.crypt3
 VALUE method_crypt3(VALUE self, VALUE str_arg, VALUE salt_arg) {
+  // Convert args from ruby strings into char arrays
   char* str = RSTRING(str_arg)->ptr;
   char* salt = RSTRING(salt_arg)->ptr;
 
-//  printf("str: %s\n", str);
-//  printf("salt: %s\n", salt);
-
+  // Get back the hashed array string
   char *hashed = crypt(str, salt);
 
-//  printf("hashed: %s\n", hashed);
-  
+  // Cast it into a ruby string and return it
   return rb_str_new2(hashed);
 }
-

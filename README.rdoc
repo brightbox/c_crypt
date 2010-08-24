@@ -11,6 +11,12 @@ Ruby wrapper for the C crypt() function.
 * Only builds against Ubuntu
 * Probably not thread safe
 
+=== OS X
+
+Whilst the gem compiles and works on OS X, it's using the BSD crypt() function, not the GNU stdlib's function. This means you get a completely different hash back from it.
+
+The reason "support" for OS X has been added is so our developers who use Macs can still run the applications that lean on c_crypt locally.
+
 == SYNOPSIS:
 
 Use it exactly the same as +crypt()+, give it a string to hash, and a salt. The start of the salt determines what algorithm is used. 
