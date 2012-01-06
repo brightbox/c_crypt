@@ -6,10 +6,13 @@
 
 Ruby wrapper for the C crypt() function.
 
+**NOTE** This just duplicates what String#crypt does. The gem was written before that was discovered. Use String#crypt instead of this gem.
+
 == FEATURES/PROBLEMS:
 
 * Only builds against Ubuntu
 * Probably not thread safe
+* Duplicates String#crypt
 
 === OS X
 
